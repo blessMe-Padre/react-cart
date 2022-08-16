@@ -1,9 +1,15 @@
-import './App.css';
+import Cart from "./components/Cart";
+import { Container } from "./components/Container";
+import { PageTitle } from "./components/Title";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Container>
+        <PageTitle>Корзина</PageTitle>
+        <Cart />
+      </Container>
+    </>
   );
 }
 
