@@ -1,9 +1,11 @@
 import React from 'react'
 import ButtonDelete from '../Buttons'
-import { ProductInner, ProductItem } from './styled'
+import Count from '../Count';
+import formatPrice from './../../priceFormatter';
+import { ProductInner, ProductItem } from './styled';
 
-export default function Product({ product, removeProduct }) {
-    const { img, title, price, count, id } = product;
+export default function Product({ product, removeProduct, increase, decrease, changeValue }) {
+    const { img, title, priceTotal, count, id } = product;
 
     return (
         <ProductInner>
@@ -11,8 +13,16 @@ export default function Product({ product, removeProduct }) {
                 <img src={`./img/products/${img}`} alt={title} />
             </ProductItem>
             <ProductItem>{title}</ProductItem>
-            <ProductItem>1</ProductItem>
-            <ProductItem>{price} руб</ProductItem>
+            <ProductItem>
+                <Count
+                    count={count}
+                    changeValue={changeValue}
+                    increase={increase}
+                    decrease={decrease}
+                    id={id}
+                />
+            </ProductItem>
+            <ProductItem>{formatPrice(priceTotal)} руб</ProductItem>
             <ProductItem>
                 <ButtonDelete removeProduct={removeProduct} id={id} />
             </ProductItem>
