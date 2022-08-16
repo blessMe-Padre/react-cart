@@ -1,14 +1,14 @@
-import Cart from "./components/Cart";
-import { Container } from "./components/Container";
-import { PageTitle } from "./components/Title";
+import { Routes, Route } from 'react-router-dom';
+import CartPage from './pages/CartPage';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
     <>
-      <Container>
-        <PageTitle>Корзина</PageTitle>
-        <Cart />
-      </Container>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/cart' element={<CartPage />} />
+      </Routes>
     </>
   );
 }
