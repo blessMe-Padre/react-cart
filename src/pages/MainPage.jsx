@@ -5,8 +5,9 @@ import { Container } from "./../components/Container";
 import { PageTitle } from "./../components/Title";
 import ProductItem from '../components/ProductItem';
 
-import styled from "styled-components";
 import data from './../data';
+import { StyledLink } from '../components/Link/styled';
+import { PageHeader, PageWrapper } from './../components/Styled/styled'
 
 export default function MainPage() {
     const [cart, setCart] = useState(data);
@@ -18,17 +19,15 @@ export default function MainPage() {
         />;
     });
 
-    const MainPageWrapper = styled.div`
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    `
-
     return (
         <Container>
-            <PageTitle>Главная страница</PageTitle>
-            <MainPageWrapper>
+            <PageHeader>
+                <PageTitle>Главная страница</PageTitle>
+                <StyledLink to="/cart">Корзина</StyledLink>
+            </PageHeader>
+            <PageWrapper>
                 {products}
-            </MainPageWrapper>
+            </PageWrapper>
         </Container>
     )
 }
