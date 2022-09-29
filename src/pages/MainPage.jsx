@@ -8,9 +8,12 @@ import ProductItem from '../components/ProductItem';
 import data from './../data';
 import { StyledLink } from '../components/Link/styled';
 import { PageHeader, PageWrapper } from './../components/Styled/styled'
+import { useSelector } from 'react-redux';
 
 export default function MainPage() {
-    const [cart, setCart] = useState(data);
+    const [cart] = useState(data);
+    const item = useSelector(state => state.cart.itemInCart);
+    const totalItem = item.length;
 
     const products = cart.map((product) => {
         return <ProductItem
@@ -23,7 +26,10 @@ export default function MainPage() {
         <Container>
             <PageHeader>
                 <PageTitle>Главная страница</PageTitle>
-                <StyledLink to="/cart">Корзина</StyledLink>
+                <div>
+                    <StyledLink to="/cart">Корзина</StyledLink>
+                    {totalItem > 0 ? (<span>{totalItem}</span>) : null}
+                </div>
             </PageHeader>
             <PageWrapper>
                 {products}

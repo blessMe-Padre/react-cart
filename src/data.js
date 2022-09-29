@@ -3,7 +3,7 @@ const cart = [
         id: 1,
         img: 'macbook.jpg',
         title: 'Apple MacBook Air 13',
-        count: 2,
+        count: 1,
         price: 100000,
         priceTotal: 200000,
     },

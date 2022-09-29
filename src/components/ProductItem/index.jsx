@@ -1,16 +1,26 @@
 import React from 'react';
 import { Button } from '../Buttons/styled';
-import { setItemInCart } from './../../redux/reducer';
+import { setItemInCart, deleteItemFromCart } from './../../redux/reducer';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 
 export default function ProductItem({ product }) {
     const { img, title, price } = product;
+
     const dispatch = useDispatch();
+    const items = useSelector(state => state.cart.itemInCart);
+    const isItemInCart = items.some(item => item.id === product.id);
+
     const handleClick = (e) => {
         e.stopPropagation();
-        dispatch(setItemInCart(product))
-        console.log('click');
+        if (isItemInCart) {
+            dispatch(deleteItemFromCart(product.id))
+        } else {
+            dispatch(setItemInCart(product))
+        }
     }
+
     return (
         <div>
             <div>
@@ -18,7 +28,9 @@ export default function ProductItem({ product }) {
             </div>
             <div>{title}</div>
             <div>{price} руб</div>
-            <Button onClick={handleClick}>В корзину</Button>
+            <Button onClick={handleClick}>
+                {isItemInCart ? 'Убрать из корзины' : 'В корзину'}
+            </Button>
         </div>
     )
 }

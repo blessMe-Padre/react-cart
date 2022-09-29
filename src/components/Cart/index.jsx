@@ -3,11 +3,9 @@ import { useState, useEffect } from "react";
 import CartFooter from '../CartFooter';
 import CartHeader from '../CartHeader';
 import Product from '../Product';
-import data from '../../data';
 
-
-export default function Cart() {
-    const [cart, setCart] = useState(data);
+export default function Cart({ items }) {
+    const [cart, setCart] = useState(items);
 
     const [total, setTotal] = useState({
         price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
@@ -27,8 +25,9 @@ export default function Cart() {
         )
     }
 
+
     // увеличения счетчика количества продукта
-    const increase = (id) => {
+    function increase(id) {
         setCart((cart) => {
             return cart.map((product) => {
                 if (product.id === id) {
@@ -38,9 +37,9 @@ export default function Cart() {
                         priceTotal: (product.count + 1) * product.price,
                     };
                 }
-                return product
-            })
-        })
+                return product;
+            });
+        });
     }
 
     // уменьшение счетчика количества продукта
@@ -88,6 +87,8 @@ export default function Cart() {
             decrease={decrease}
         />;
     });
+
+
 
     return (
         <>
