@@ -4,4 +4,5 @@ export const Button = styled.button`
     background-color: transparent;
     border: none;
     cursor: pointer;
+    color: #fff;
 `
