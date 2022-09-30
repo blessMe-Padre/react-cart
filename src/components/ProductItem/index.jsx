@@ -6,6 +6,7 @@ import { setItemInCart, deleteItemFromCart } from './../../redux/reducer';
 import formatPrice from '../../priceFormatter';
 import { AddButton, GrayButton } from '../Buttons/styled';
 import { ProductPrice } from '../Styled/ProductPrice';
+import { ProductCard } from './styled';
 
 
 export default function ProductItem({ product }) {
@@ -25,16 +26,16 @@ export default function ProductItem({ product }) {
     }
 
     return (
-        <div>
+        <ProductCard>
             <div>
                 <img src={`./img/products/${img}`} alt={title} />
+                <p>{title}</p>
+                <ProductPrice>Цена: {formatPrice(price)} руб</ProductPrice>
             </div>
-            <p>{title}</p>
-            <ProductPrice>Цена: {formatPrice(price)} руб</ProductPrice>
             {isItemInCart ?
                 <GrayButton onClick={handleClick}>Убрать из корзины</GrayButton>
                 : <AddButton onClick={handleClick}>Добавить в корзину</AddButton>
             }
-        </div>
+        </ProductCard>
     )
 }

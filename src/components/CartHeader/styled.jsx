@@ -7,6 +7,11 @@ export const Header = styled.div`
     background-color: #c9c9c9;
     color: #000000;
     padding: 20px 10px;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 export const HeaderItem = styled.div`
     grid-column-start: 2;

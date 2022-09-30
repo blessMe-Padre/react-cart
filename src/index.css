@@ -25,11 +25,12 @@ p {
   font-weight: normal;
   background-color: #f2f2f2;
   grid-template-columns: repeat(3, 1fr);
-
+  margin-bottom: 10px;
   padding: 20px;
 
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 
   position: relative;
@@ -41,6 +42,10 @@ p {
   border-radius: 100%;
 
   background-color: tomato;
+
+    @media (max-width: 686px) {
+      right: 10px;
+  }
 }
 
 

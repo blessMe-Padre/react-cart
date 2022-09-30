@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 30px;
     border: none;
     cursor: pointer;
     color: #fff;
+
+    @media (max-width: 686px) {
+        right: 10px;
+    }
 `
 export const AddButton = styled.button`
     user-select: none;
