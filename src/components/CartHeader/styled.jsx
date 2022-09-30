@@ -6,7 +6,7 @@ export const Header = styled.div`
     column-gap: 30px;
     background-color: #c9c9c9;
     color: #000000;
-    padding: 0 10px;
+    padding: 20px 10px;
 `
 export const HeaderItem = styled.div`
     grid-column-start: 2;

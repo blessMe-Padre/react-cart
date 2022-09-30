@@ -6,7 +6,7 @@ export const Footer = styled.div`
     column-gap: 30px;
     background-color: #c9c9c9;
     color: #000000;
-    padding: 10px 0;
+    padding: 20px 0;
 `
 export const FooterItem = styled.div`
     grid-column-start: 3;

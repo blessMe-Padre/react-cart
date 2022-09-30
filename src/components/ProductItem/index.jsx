@@ -1,8 +1,11 @@
 import React from 'react';
-import { Button } from '../Buttons/styled';
-import { setItemInCart, deleteItemFromCart } from './../../redux/reducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { setItemInCart, deleteItemFromCart } from './../../redux/reducer';
+
+import formatPrice from '../../priceFormatter';
+import { AddButton, GrayButton } from '../Buttons/styled';
+import { ProductPrice } from '../Styled/ProductPrice';
 
 
 export default function ProductItem({ product }) {
@@ -26,11 +29,12 @@ export default function ProductItem({ product }) {
             <div>
                 <img src={`./img/products/${img}`} alt={title} />
             </div>
-            <div>{title}</div>
-            <div>{price} руб</div>
-            <Button onClick={handleClick}>
-                {isItemInCart ? 'Убрать из корзины' : 'В корзину'}
-            </Button>
+            <p>{title}</p>
+            <ProductPrice>Цена: {formatPrice(price)} руб</ProductPrice>
+            {isItemInCart ?
+                <GrayButton onClick={handleClick}>Убрать из корзины</GrayButton>
+                : <AddButton onClick={handleClick}>Добавить в корзину</AddButton>
+            }
         </div>
     )
 }

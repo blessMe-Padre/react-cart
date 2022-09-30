@@ -5,8 +5,8 @@ export default function CartHeader() {
     return (
         <Header>
             <HeaderItem>наименование</HeaderItem>
-            <div>количество</div>
-            <div>стоимость</div>
+            <p>количество</p>
+            <p>стоимость</p>
         </Header>
     )
 }

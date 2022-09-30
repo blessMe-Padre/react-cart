@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState } from "react";
+import { useSelector } from 'react-redux';
 
 import { Container } from "./../components/Container";
 import { PageTitle } from "./../components/Title";
 import ProductItem from '../components/ProductItem';
+import { CartQuantity } from '../components/Styled/CardQuantity';
 
 import data from './../data';
 import { StyledLink } from '../components/Link/styled';
 import { PageHeader, PageWrapper } from './../components/Styled/styled'
-import { useSelector } from 'react-redux';
 
 export default function MainPage() {
     const [cart] = useState(data);
@@ -27,8 +28,9 @@ export default function MainPage() {
             <PageHeader>
                 <PageTitle>Главная страница</PageTitle>
                 <div>
-                    <StyledLink to="/cart">Корзина</StyledLink>
-                    {totalItem > 0 ? (<span>{totalItem}</span>) : null}
+                    <StyledLink to="/cart">корзина
+                        {totalItem > 0 ? (<CartQuantity>{totalItem}</CartQuantity>) : null}
+                    </StyledLink>
                 </div>
             </PageHeader>
             <PageWrapper>

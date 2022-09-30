@@ -15,14 +15,32 @@ code {
     monospace;
 }
 
+p {
+  margin: 0 0 15px 0;
+}
+
 .test {
+  font-size: 15px;
   text-align: center;
   font-weight: normal;
   background-color: #f2f2f2;
-  background-color: transparent;
   grid-template-columns: repeat(3, 1fr);
+
+  padding: 20px;
+
+  display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: relative;
+  position: absolute;
+  user-select: none;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+
+  background-color: tomato;
 }
 
 
