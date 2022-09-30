@@ -1,12 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from "react";
+import { deleteItemFromCart } from './../../redux/reducer';
+import { useDispatch } from 'react-redux';
+
 import CartFooter from '../CartFooter';
 import CartHeader from '../CartHeader';
 import Product from '../Product';
 
+
 export default function Cart({ items }) {
     const [cart, setCart] = useState(items);
-
+    const dispatch = useDispatch();
     const [total, setTotal] = useState({
         price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
         count: cart.reduce((prev, curr) => prev + curr.count, 0)
@@ -21,8 +25,8 @@ export default function Cart({ items }) {
 
     // удаление продукта
     const removeProduct = (id) => {
-        setCart((cart) => cart.filter((product) => id !== product.id)
-        )
+        setCart((cart) => cart.filter((product) => id !== product.id));
+        dispatch(deleteItemFromCart(id));
     }
 
 
@@ -87,7 +91,6 @@ export default function Cart({ items }) {
             decrease={decrease}
         />;
     });
-
 
 
     return (
