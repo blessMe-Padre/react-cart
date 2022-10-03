@@ -1,5 +1,5 @@
-import React from 'react'
-import ButtonDelete from '../Buttons'
+import React from 'react';
+import ButtonDelete from '../Buttons';
 import Count from '../Count';
 import formatPrice from './../../priceFormatter';
 import { ProductInner, ProductItem } from './styled';
@@ -10,7 +10,7 @@ export default function Product({ product, removeProduct, increase, decrease, ch
     return (
         <ProductInner>
             <ProductItem>
-                <img src={`img/products/${img}`} alt={title} />
+                <img src={`./img/products/${img}`} alt={title} />
             </ProductItem>
             <ProductItem>{title}</ProductItem>
             <ProductItem>

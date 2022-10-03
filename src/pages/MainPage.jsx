@@ -28,7 +28,7 @@ export default function MainPage() {
             <PageHeader>
                 <PageTitle>Популярные товары</PageTitle>
                 <div>
-                    <StyledLink to="cart/">корзина
+                    <StyledLink to="cart">корзина
                         {totalItem > 0 ? (<CartQuantity>{totalItem}</CartQuantity>) : null}
                     </StyledLink>
                 </div>
