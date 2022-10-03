@@ -10,7 +10,7 @@ export default function Product({ product, removeProduct, increase, decrease, ch
     return (
         <ProductInner>
             <ProductItem>
-                <img src={`./img/products/${img}`} alt={title} />
+                <img src={`img/products/${img}`} alt={title} />
             </ProductItem>
             <ProductItem>{title}</ProductItem>
             <ProductItem>

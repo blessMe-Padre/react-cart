@@ -14,7 +14,7 @@ export default function CartPage() {
         <Container>
             <PageHeader>
                 <PageTitle>Корзина</PageTitle>
-                <StyledLink to="/">на главную</StyledLink>
+                <StyledLink to="/react-cart/">на главную</StyledLink>
             </PageHeader>
             <Cart items={items} />
         </Container>

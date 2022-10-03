@@ -8,8 +8,8 @@ function App() {
   return (
     <Provider store={store}>
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/cart' element={<CartPage />} />
+        <Route path='react-cart/' element={<MainPage />} />
+        <Route path='react-cart/cart/' element={<CartPage />} />
       </Routes>
     </Provider>
   );
