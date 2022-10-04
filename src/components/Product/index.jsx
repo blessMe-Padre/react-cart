@@ -6,7 +6,6 @@ import { ProductInner, ProductItem } from './styled';
 
 export default function Product({ product, removeProduct, increase, decrease, changeValue }) {
     const { img, title, priceTotal, count, id } = product;
-
     return (
         <ProductInner>
             <ProductItem>

@@ -6,11 +6,11 @@ import { setItemInCart, deleteItemFromCart } from './../../redux/reducer';
 import formatPrice from '../../priceFormatter';
 import { AddButton, GrayButton } from '../Buttons/styled';
 import { ProductPrice } from '../Styled/ProductPrice';
-import { ProductCard } from './styled';
+import { ProductCard, ProductDescriptions, ProductImg, ProductTitle } from './styled';
 
 
 export default function ProductItem({ product }) {
-    const { img, title, price } = product;
+    const { img, title, price, descriptions } = product;
 
     const dispatch = useDispatch();
     const items = useSelector(state => state.cart.itemInCart);
@@ -28,8 +28,11 @@ export default function ProductItem({ product }) {
     return (
         <ProductCard>
             <div>
-                <img src={`./img/products/${img}`} alt={title} />
-                <p>{title}</p>
+                <ProductImg>
+                    <img src={`./img/products/${img}`} alt={title} />
+                </ProductImg>
+                <ProductTitle>{title}</ProductTitle>
+                <ProductDescriptions>{descriptions}</ProductDescriptions>
                 <ProductPrice>Цена: {formatPrice(price)} руб</ProductPrice>
             </div>
             {isItemInCart ?

@@ -6,8 +6,8 @@ export const CartQuantity = styled.span`
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -7px;
-    left: -30px;
+    top: -14px;
+    left: 10px;
     background-color: tomato;
     width: 25px;
     height: 25px;

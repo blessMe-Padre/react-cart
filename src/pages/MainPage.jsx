@@ -15,6 +15,7 @@ export default function MainPage() {
     const [cart] = useState(data);
     const item = useSelector(state => state.cart.itemInCart);
     const totalItem = item.length;
+    console.log(cart);
 
     const products = cart.map((product) => {
         return <ProductItem
@@ -27,11 +28,11 @@ export default function MainPage() {
         <Container>
             <PageHeader>
                 <PageTitle>Популярные товары</PageTitle>
-                <div>
-                    <StyledLink to="cart">корзина
-                        {totalItem > 0 ? (<CartQuantity>{totalItem}</CartQuantity>) : null}
-                    </StyledLink>
-                </div>
+                <StyledLink to="cart">
+                    <img src="./img/icons/cart.svg" alt="cart" />
+                    корзина
+                    {totalItem > 0 ? (<CartQuantity>{totalItem}</CartQuantity>) : null}
+                </StyledLink>
             </PageHeader>
             <PageWrapper>
                 {products}
