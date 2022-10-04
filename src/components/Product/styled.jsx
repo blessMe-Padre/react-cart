@@ -6,12 +6,12 @@ export const ProductInner = styled.div`
     align-items: center;
     grid-template-columns: 2fr repeat(3, 3fr) 1fr;
     column-gap: 30px;
-    background-color: #f2f2f2;
     color: #000000;
     padding: 0 10px;
-    margin-bottom: 10px;
+    box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 20%);
+    gap: 10px;
 
-    @media (max-width: 686px) {
+    @media (max-width: 768px) {
         display: block;
     }
 `

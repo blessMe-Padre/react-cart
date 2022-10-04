@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { deleteItemFromCart } from './../../redux/reducer';
 import { useDispatch } from 'react-redux';
 
-import CartFooter from '../CartFooter';
-import CartHeader from '../CartHeader';
+import CartOrder from '../CartOrder';
 import Product from '../Product';
+import { CartItemWrapper } from './styled';
+import { CartItemList } from './styled';
 
 
 export default function Cart({ items }) {
@@ -28,7 +29,6 @@ export default function Cart({ items }) {
         setCart((cart) => cart.filter((product) => id !== product.id));
         dispatch(deleteItemFromCart(id));
     }
-
 
     // увеличения счетчика количества продукта
     function increase(id) {
@@ -92,13 +92,17 @@ export default function Cart({ items }) {
         />;
     });
 
-
     return (
-        <>
-            <CartHeader />
-            {products}
-            <CartFooter total={total} />
-        </>
-
+        <CartItemWrapper>
+            {items.length > 0 ?
+                (
+                    <CartItemList>
+                        {products}
+                    </CartItemList>
+                )
+                : "Ваша корзина пуста"
+            }
+            <CartOrder total={total} />
+        </CartItemWrapper>
     )
 }

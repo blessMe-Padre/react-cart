@@ -7,11 +7,11 @@ export const PageWrapper = styled.div`
     padding: 40px 0;
     gap: 20px;
 
-    @media (max-width: 686px) {
+    @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 566px) {
         grid-template-columns: repeat(1, 1fr);
         gap: 40px;
     }

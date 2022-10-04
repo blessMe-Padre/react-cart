@@ -31,6 +31,9 @@ p {
   flex-direction: column;
   align-items: center;
 
+  display: grid;
+  grid-template-columns: 70% 30%;
+
   position: relative;
   position: absolute;
   user-select: none;

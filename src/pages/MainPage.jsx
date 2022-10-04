@@ -15,7 +15,6 @@ export default function MainPage() {
     const [cart] = useState(data);
     const item = useSelector(state => state.cart.itemInCart);
     const totalItem = item.length;
-    console.log(cart);
 
     const products = cart.map((product) => {
         return <ProductItem
