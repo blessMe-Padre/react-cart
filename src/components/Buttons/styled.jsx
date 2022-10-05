@@ -8,13 +8,16 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+`
 
-    @media (max-width: 686px) {
+export const DeleteButton = styled(Button)`
+    @media (max-width: 767px) {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 20px;
     }
 `
+
 export const AddButton = styled.button`
     user-select: none;
     width: 140px;

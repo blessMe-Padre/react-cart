@@ -5,7 +5,7 @@ export const ProductWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
 `
 
-export const ProductCard = styled.div`
+export const ProductCard = styled.li`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

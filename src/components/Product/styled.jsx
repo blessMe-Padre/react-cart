@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const ProductInner = styled.div`
+export const ProductInner = styled.li`
     position: relative;
     display: grid;
     align-items: center;
     grid-template-columns: 2fr repeat(3, 3fr) 1fr;
-    column-gap: 30px;
+    column-gap: 10px;
     color: #000000;
     padding: 0 10px;
     box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 20%);
-    gap: 10px;
+    margin: 0;
 
     @media (max-width: 768px) {
         display: block;

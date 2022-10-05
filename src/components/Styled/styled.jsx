@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const PageWrapper = styled.div`
+export const PageWrapper = styled.ul`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 40px 0;
